@@ -14,7 +14,7 @@ object Part2 extends App {
   println(
     List(2, 6, 10, 14, 1).map { slope =>
       rows.count { case (row, idx) =>
-        (slope * idx) % 2 == 0 && row((slope.toInt * idx / 2) % row.length) == '#'
+        (slope * idx) % 2 == 0 && row((slope * idx / 2) % row.length) == '#'
       }.toLong
     }.product
   )
