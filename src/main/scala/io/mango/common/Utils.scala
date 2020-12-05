@@ -27,4 +27,8 @@ object Utils {
   implicit class RegexOps(sc: StringContext) {
     def r = new util.matching.Regex(sc.parts.mkString, sc.parts.tail.map(_ => "x"): _*)
   }
+
+  implicit class stringOps(x: String) {
+    def b: Int = Integer.parseInt(x, 2)
+  }
 }

@@ -1,3 +1,4 @@
+name := "adv2020"
 ThisBuild / scalaVersion := "2.13.4"
 ThisBuild / scalacOptions ++= Seq()
 
