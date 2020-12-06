@@ -7,15 +7,13 @@ import cats.implicits._
 object Part1 extends App {
   println(
     readLinesSplit("day06", "^$".r)
-      .map(_.flatten.toSet)
-      .foldMap(_.size)
+      .foldMap(_.flatten.toSet.size)
   )
 }
 
 object Part2 extends App {
   println(
     readLinesSplit("day06", "^$".r)
-      .map(_.map(_.toSet).reduce(_ intersect _))
-      .foldMap(_.size)
+      .foldMap(_.map(_.toSet).reduce(_ intersect _).size)
   )
 }
