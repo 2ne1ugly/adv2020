@@ -1,6 +1,7 @@
 package io.mango.common
 
 import scala.annotation.tailrec
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 import scala.util.matching.Regex
@@ -30,5 +31,9 @@ object Utils {
 
   implicit class stringOps(x: String) {
     def b: Int = Integer.parseInt(x, 2)
+  }
+
+  def memoize[I, O](f: I => O): I => O = new mutable.HashMap[I, O]() {
+    override def apply(key: I): O = getOrElseUpdate(key, f(key))
   }
 }
