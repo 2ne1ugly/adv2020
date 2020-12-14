@@ -30,7 +30,7 @@ object Utils {
   }
 
   implicit class stringOps(x: String) {
-    def b: Int = Integer.parseInt(x, 2)
+    def b: Long = BigInt.apply(x, 2).toLong
   }
 
   def memoize[I, O](f: I => O): I => O = new mutable.HashMap[I, O]() {
