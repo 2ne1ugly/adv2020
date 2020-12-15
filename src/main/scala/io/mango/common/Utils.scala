@@ -7,6 +7,12 @@ import scala.io.Source
 import scala.util.matching.Regex
 
 object Utils {
+  def readString(path: String): String = {
+    val source = Source.fromResource(path)
+    try source.mkString
+    finally source.close()
+  }
+
   def readLines(path: String): List[String] = {
     val source = Source.fromResource(path)
     try source.getLines().toList
